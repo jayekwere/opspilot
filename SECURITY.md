@@ -12,7 +12,7 @@ The CLI is an authenticated API client. Diagnostic names, targets, and scenarios
 
 ## Credentials and evidence
 
-Provider credentials are inherited only from a small environment allowlist. AWS uses explicit environment credentials and region; instance metadata access is disabled. GitHub uses `GH_TOKEN` and `GH_REPO`. Kubernetes uses an explicitly trusted `KUBECONFIG`; kubeconfig exec plugins run as the operator and must be reviewed before use. Do not accept kubeconfigs from users or mount the Docker socket into the app.
+Provider credentials are inherited only from a tool-specific environment allowlist. GitHub credentials go only to gh, AWS credentials only to aws, and the kubeconfig path only to kubectl. AWS uses explicit environment credentials and region; instance metadata access is disabled. GitHub uses `GH_TOKEN` and `GH_REPO`. Kubernetes uses an explicitly trusted `KUBECONFIG`; kubeconfig exec plugins run as the operator and must be reviewed before use. Do not accept kubeconfigs from users or mount the Docker socket into the app.
 
 SQLite state uses a mode-0700 directory and mode-0600 database. Kubernetes evidence projects only names and diagnostic status, excluding pod environment and workload specs. Known secret keys and common inline token/password patterns are redacted before persistence. Pattern redaction is not a DLP guarantee: logs can contain unrecognized secrets or personal data. Limit collection to authorized systems. Do not publish production state or run reports. The browser keeps bearer tokens in memory, not browser storage. Authentication headers and raw output are not written to structured logs.
 

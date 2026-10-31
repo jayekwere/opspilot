@@ -1,0 +1,18 @@
+{
+  "scope": "read-only GitHub Actions API against the public OpsPilot repository",
+  "result": {
+    "status": "healthy",
+    "findings": [],
+    "evidence": {
+      "runs": [
+        {
+          "conclusion": "",
+          "databaseId": 41242085766,
+          "headSha": "513f61a0b12a40d6aa6d4020083dee86609fa756",
+          "name": "Verify OpsPilot",
+          "status": "in_progress"
+        }
+      ]
+    }
+  }
+}

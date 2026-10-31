@@ -1,6 +1,6 @@
 # Release 0.1.0
 
-Status: locally validated source release candidate. GitHub publication, hosted Actions execution, package publication, and a public release tag are pending. Do not interpret local test results as a hosted CI result.
+Source: [jayekwere/opspilot](https://github.com/jayekwere/opspilot). Local checks and hosted verification have passed. See [verification evidence](verification.md) for the recorded commit, workflow result, exact test counts, and scope. Release availability is shown on the [GitHub releases page](https://github.com/jayekwere/opspilot/releases).
 
 ## Included
 

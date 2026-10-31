@@ -94,3 +94,18 @@ def test_dns_failure_returns_unavailable(client):
 def test_lab_wrong_book(client):
     result = asyncio.run(collect(Request(runbook="cloud", target="lab"), client.app.state.lab))
     assert result.status == "unavailable"
+
+
+def test_credentials_do_not_reach_unrelated_collectors(monkeypatch):
+    monkeypatch.setenv("GH_TOKEN", "synthetic-credential")
+    monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "synthetic-cloud-credential")
+    result = asyncio.run(
+        _execute(
+            (
+                "python3",
+                "-c",
+                'import os; print(os.getenv("GH_TOKEN")); print(os.getenv("AWS_SECRET_ACCESS_KEY"))',
+            )
+        )
+    )
+    assert result.text == "None\nNone\n"

@@ -1,0 +1,45 @@
+{
+  "scope": "authenticated CLI-to-API round trip using isolated fixture inputs",
+  "exit_code": 0,
+  "result": {
+    "id": "185d0cf2-85be-46d6-b051-29b5aca018dd",
+    "actor": "operator",
+    "request": {
+      "runbook": "filesystem",
+      "target": "fixture",
+      "scenario": "failure",
+      "manual_seconds": null,
+      "baseline_source": null
+    },
+    "status": "finding",
+    "started_at": 1793481191.85793,
+    "seconds": 0.00026608293410390615,
+    "intervention_required": true,
+    "findings": [
+      {
+        "code": "disk_capacity",
+        "severity": "warning",
+        "summary": "Filesystem capacity at or above 90%",
+        "recommendation": "Review retention and largest directories; do not delete automatically"
+      },
+      {
+        "code": "inode_exhaustion",
+        "severity": "critical",
+        "summary": "Inode usage at or above 90%",
+        "recommendation": "Inspect small-file producers and retention"
+      },
+      {
+        "code": "read_only_mount",
+        "severity": "critical",
+        "summary": "Filesystem is mounted read-only",
+        "recommendation": "Review kernel and device errors before remounting"
+      }
+    ],
+    "evidence": {
+      "used_pct": 96,
+      "inode_used_pct": 99,
+      "read_only": true
+    },
+    "manual_effort_avoided_seconds": null
+  }
+}

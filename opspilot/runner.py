@@ -84,16 +84,17 @@ async def _execute(argv: tuple[str, ...], timeout: float = 8, limit: int = 32768
             "LC_ALL": "C",
             **{
                 key: os.environ[key]
-                for key in (
-                    "GH_TOKEN",
-                    "GH_REPO",
-                    "AWS_ACCESS_KEY_ID",
-                    "AWS_SECRET_ACCESS_KEY",
-                    "AWS_SESSION_TOKEN",
-                    "AWS_DEFAULT_REGION",
-                    "AWS_REGION",
-                    "KUBECONFIG",
-                )
+                for key in {
+                    "gh": ("GH_TOKEN", "GH_REPO"),
+                    "aws": (
+                        "AWS_ACCESS_KEY_ID",
+                        "AWS_SECRET_ACCESS_KEY",
+                        "AWS_SESSION_TOKEN",
+                        "AWS_DEFAULT_REGION",
+                        "AWS_REGION",
+                    ),
+                    "kubectl": ("KUBECONFIG",),
+                }.get(argv[0], ())
                 if key in os.environ
             },
         },

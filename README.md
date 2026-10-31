@@ -1,5 +1,7 @@
 # OpsPilot
 
+[![Verify OpsPilot](https://github.com/jayekwere/opspilot/actions/workflows/verify.yml/badge.svg)](https://github.com/jayekwere/opspilot/actions/workflows/verify.yml)
+
 **Evidence before action. Approval before change.**
 
 OpsPilot is a working local IT operations automation platform with a Python diagnostic engine, authenticated FastAPI API and CLI, and a React and TypeScript operations console. Ten runbooks turn collected evidence into supported findings and next actions. Independent approval gates verified recovery in disposable service and security labs.
