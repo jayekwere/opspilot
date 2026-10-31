@@ -1,6 +1,8 @@
-# Release 0.1.0
+# Release 0.1.1
 
 Source: [jayekwere/opspilot](https://github.com/jayekwere/opspilot). Local checks and hosted verification have passed. See [verification evidence](verification.md) for the recorded commit, workflow result, exact test counts, and scope. Release availability is shown on the [GitHub releases page](https://github.com/jayekwere/opspilot/releases).
+
+Version 0.1.1 fixes CLI origin validation: crafted userinfo authorities, external hosts, paths, queries, and fragments are rejected before credentials are used. Version 0.1.0 is superseded by this patch. Container test dependencies now cache independently of application source.
 
 ## Included
 
@@ -13,7 +15,7 @@ Ten operational diagnostic analyzers and collectors; strict schemas; authenticat
 3. Review screenshots, demo outcomes, benchmark limitations, Kubernetes evidence, and SECURITY.md. Confirm that evidence contains only lab inputs.
 4. Commit the source and evidence. Publish to `jayekwere/opspilot` once GitHub authentication is available. Push the main branch and require the Verify OpsPilot check before merging future changes.
 5. Wait for hosted verification to pass. Review the actual run before claiming verified CI.
-6. Tag `v0.1.0` only after release review. The tag workflow repeats verification before publishing the runtime image to GHCR. GitHub organization or account package policy may require additional configuration; no published image is claimed yet.
+6. Tag `v0.1.1` only after release review. The tag workflow repeats verification before publishing the runtime image to GHCR. GitHub organization or account package policy may require additional configuration; verify the tag workflow result before using its image.
 
 ## Known limits
 

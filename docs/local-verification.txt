@@ -1,23 +1,23 @@
 .venv/bin/ruff check opspilot tests scripts
 All checks passed!
 .venv/bin/ruff format --check opspilot tests scripts
-21 files already formatted
+22 files already formatted
 .venv/bin/mypy opspilot
 Success: no issues found in 10 source files
 npm run lint
 
-> opspilot@0.1.0 lint
+> opspilot@0.1.1 lint
 > biome check .
 
-Checked 7 files in 91ms. No fixes applied.
+Checked 7 files in 343ms. No fixes applied.
 npm run typecheck
 
-> opspilot@0.1.0 typecheck
+> opspilot@0.1.1 typecheck
 > tsc --noEmit
 
 .venv/bin/python -m pytest
-........................................s............................... [ 72%]
-...........................                                              [100%]
+......................................................s................. [ 63%]
+.........................................                                [100%]
 =============================== warnings summary ===============================
 .venv/lib/python3.14/site-packages/fastapi/testclient.py:1
   /Users/jayekwere/Documents/ChatGPT/Github Portfolio Engineer/repos/opspilot/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
@@ -31,7 +31,7 @@ Name                   Stmts   Miss Branch BrPart  Cover   Missing
 ------------------------------------------------------------------
 opspilot/__init__.py       0      0      0      0   100%
 opspilot/api.py          154     14     24      4    90%   33-34, 67-68, 76, 78-79, 83-84, 146, 150-151, 186-187, 220->222
-opspilot/cli.py           82     31     12      1    55%   86-140, 144
+opspilot/cli.py           90     16     12      1    75%   126-163, 167
 opspilot/engine.py         3      3      2      0     0%   3-6
 opspilot/lab.py           47      1      6      1    96%   55
 opspilot/models.py        25      0      0      0   100%
@@ -40,13 +40,13 @@ opspilot/runner.py        39      1      6      1    96%   133
 opspilot/service.py      132     10     36      7    90%   51, 74-76, 114, 135, 139, 154, 156, 170->176, 174-175
 opspilot/store.py         76      9     18      3    87%   43, 70-74, 83, 109-110
 ------------------------------------------------------------------
-TOTAL                    768     87    250     25    87%
+TOTAL                    776     72    250     25    89%
 Coverage XML written to file coverage.xml
-Required test coverage of 85% reached. Total coverage: 87.23%
-98 passed, 1 skipped, 1 warning in 6.75s
+Required test coverage of 85% reached. Total coverage: 88.99%
+112 passed, 1 skipped, 1 warning in 12.18s
 npm run build
 
-> opspilot@0.1.0 build
+> opspilot@0.1.1 build
 > tsc --noEmit && vite build
 
 vite v8.3.5 building client environment for production...
@@ -54,12 +54,12 @@ transforming...
 ✓ 15 modules transformed.
 rendering chunks...
 computing gzip size...
-dist/index.html                   0.46 kB │ gzip:  0.30 kB
+dist/index.html                   0.46 kB │ gzip:  0.31 kB
 dist/assets/index-Nk3NU4WT.css   11.20 kB │ gzip:  3.28 kB
-dist/assets/index-Dlydr4WB.js   206.50 kB │ gzip: 64.40 kB
+dist/assets/index-BDUHps93.js   206.64 kB │ gzip: 64.46 kB
 
-✓ built in 223ms
+✓ built in 143ms
 .venv/bin/python -m opspilot.cli demo
-{"recovery": {"outcome": "succeeded", "seconds": 0.0062770419754087925, "verified": true, "failure_reason": null, "action": "recover_disposable_service"}, "report": "docs/demo-result.json"}
+{"recovery": {"outcome": "succeeded", "seconds": 0.005897874943912029, "verified": true, "failure_reason": null, "action": "recover_disposable_service"}, "report": "docs/demo-result.json"}
 .venv/bin/python -m scripts.benchmark
 docs/benchmark.json

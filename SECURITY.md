@@ -8,7 +8,7 @@ The server operator configures distinct identities through `OPSPILOT_IDENTITIES`
 
 Operators may request remediation for their own lab findings. A different named identity must approve. The approver cannot execute the approved change. Approvals expire after ten minutes and bind to a specific lab generation. Restarting invalidates pending, approved, or executing approvals. Completed remediation is idempotent. Failed or interrupted remediation is not retried automatically. Diagnose again after a new failure. Service and SSH-configuration repairs affect only objects owned by the disposable lab. Host recovery and privileged configuration changes are unsupported and cannot be selected through the API.
 
-The CLI is an authenticated API client. Diagnostic names, targets, and scenarios use strict enums. The public input contract contains no command, executable, arbitrary path, URL, or host field. External collectors use fixed argument arrays with no shell. Executables resolve only from fixed system directories. Trusted administrators must control those directories and installed tools.
+The CLI is an authenticated API client. Version 0.1.1 parses and canonicalizes its API origin, permitting only an explicit HTTP IPv4 loopback address and port, with no userinfo, path, query, or fragment. Do not use version 0.1.0 with untrusted CLI URL arguments. Diagnostic names, targets, and scenarios use strict enums. The public input contract contains no command, executable, arbitrary path, URL, or host field. External collectors use fixed argument arrays with no shell. Executables resolve only from fixed system directories. Trusted administrators must control those directories and installed tools.
 
 ## Credentials and evidence
 

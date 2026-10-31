@@ -159,7 +159,7 @@ function App() {
             <br />
             Independent recovery approval.
           </p>
-          <span className="muted">OpsPilot / v0.1.0</span>
+          <span className="muted">OpsPilot / v0.1.1</span>
         </div>
       </aside>
       <main>
@@ -472,7 +472,11 @@ function App() {
                 approvals.map((a) => (
                   <div className="approval" key={a.id}>
                     <div>
-                      <strong>Recover disposable service</strong>
+                      <strong>
+                        {runs.find((r) => r.id === a.run_id)?.request.runbook === "security"
+                          ? "Repair disposable security configuration"
+                          : "Recover disposable service"}
+                      </strong>
                       <p>
                         {short(a.run_id)} · requested by {a.requester}
                       </p>
@@ -553,7 +557,7 @@ function App() {
           )}
           <footer>
             OpsPilot <span>Evidence before action. Approval before change.</span>
-            <span>Local lab · v0.1.0</span>
+            <span>Local lab · v0.1.1</span>
           </footer>
         </div>
       </main>
@@ -601,7 +605,7 @@ function App() {
               </div>
             ))}
             {selected.remediation && (
-              <div className="alert success">
+              <div className={`alert ${selected.remediation.verified ? "success" : "error"}`}>
                 Recovery {selected.remediation.outcome}. Verification: {String(selected.remediation.verified)}
                 .
               </div>

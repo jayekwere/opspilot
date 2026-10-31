@@ -50,7 +50,7 @@ def create_app(directory: Path | None = None, identities: dict[str, Principal] |
             lab.close()
             store.close()
 
-    app = FastAPI(title="OpsPilot", version="0.1.0", lifespan=lifespan)
+    app = FastAPI(title="OpsPilot", version="0.1.1", lifespan=lifespan)
     slots = asyncio.Semaphore(8)
 
     @app.middleware("http")

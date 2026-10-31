@@ -10,6 +10,7 @@ import tempfile
 import time
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit
 
 import httpx
 
@@ -82,6 +83,30 @@ async def demo(output: Path) -> dict[str, Any]:
             lab.close()
 
 
+def local_api_origin(value: str) -> str:
+    """Reject alternate authorities and URL suffixes before credentials are used."""
+    try:
+        parsed = urlsplit(value)
+        port = parsed.port
+        if (
+            parsed.scheme != "http"
+            or parsed.hostname != "127.0.0.1"
+            or parsed.username is not None
+            or parsed.password is not None
+            or parsed.path not in ("", "/")
+            or parsed.query
+            or parsed.fragment
+            or port is None
+            or not 1 <= port <= 65535
+        ):
+            raise ValueError("invalid local origin")
+    except ValueError as error:
+        raise argparse.ArgumentTypeError(
+            "URL must be http://127.0.0.1:<port> with no credentials, path, query, or fragment"
+        ) from error
+    return f"http://127.0.0.1:{port}"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -96,7 +121,7 @@ def main() -> None:
     )
     diagnose.add_argument("--target", choices=["fixture", "local", "lab"], default="fixture")
     diagnose.add_argument("--scenario", choices=["healthy", "failure", "unavailable"], default="failure")
-    diagnose.add_argument("--url", default="http://127.0.0.1:8080")
+    diagnose.add_argument("--url", type=local_api_origin, default="http://127.0.0.1:8080")
     args = parser.parse_args()
     if args.command == "credentials":
         print(
@@ -127,8 +152,6 @@ def main() -> None:
         token = os.environ.get("OPSPILOT_TOKEN", "")
         if not token:
             parser.error("OPSPILOT_TOKEN is required")
-        if not args.url.startswith("http://127.0.0.1:"):
-            parser.error("CLI only connects to the local API")
         response = httpx.post(
             args.url + "/api/runs",
             headers={"Authorization": f"Bearer {token}", "Idempotency-Key": secrets.token_hex(16)},

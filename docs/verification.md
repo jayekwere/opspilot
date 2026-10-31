@@ -4,13 +4,13 @@ Verified locally on October 31, 2026. Host: macOS ARM64, Python 3.14.6, Node 26.
 
 | Check | Result | Evidence |
 | --- | --- | --- |
-| Python unit, integration, adversarial, and workflow tests | 98 passed; 1 Linux-only test skipped on macOS; 87.23% branch-aware coverage | [Local verification](local-verification.txt) |
+| Python unit, integration, adversarial, and workflow tests | 112 passed; 1 Linux-only test skipped on macOS; 88.99% branch-aware coverage | [Local verification](local-verification.txt) |
 | Python lint, formatting, and typechecking | Passed | [Local verification](local-verification.txt) |
 | TypeScript lint, formatting, and typechecking | Passed | [Local verification](local-verification.txt) |
 | Production React build | Passed | [Local verification](local-verification.txt) |
 | Authenticated CLI | Fixture diagnosis completed through the real local API | [CLI validation](cli-validation.json) |
 | Browser end-to-end scenarios | 3 passed: console/evidence/mobile, independent approval/recovery, rejected authentication | [Browser results](browser-tests.txt) |
-| Linux Docker suite | 99 passed, including real Linux `/proc` integration | [Container verification](container-verification.txt) |
+| Linux Docker suite | 113 passed, including real Linux `/proc` integration | [Container verification](container-verification.txt) |
 | Restricted runtime smoke | Authentication, unapproved execution denial, approved recovery, dashboard serving | [Structured smoke report](container-smoke.json) |
 | Service troubleshooting demo | Detection, evidence, recommendation, approval, recovery, verification, safe replay, stale-generation failure | [Demo](demo-result.json) |
 | Security remediation | Temporary configuration and permission repair, followed by healthy recollection | Python integration test `test_security_recovery` |
@@ -25,7 +25,7 @@ Verified locally on October 31, 2026. Host: macOS ARM64, Python 3.14.6, Node 26.
 | Live GitHub integration | Read-only workflow history collected successfully from OpsPilot | [GitHub validation](github-validation.json) |
 | CI configuration | YAML parsed; action commit pins, permissions, tag trigger, and release dependency checked locally | `.github/workflows/verify.yml` |
 
-The Python suite exercises every runbook in healthy, supported-failure, and unavailable modes. It also covers malformed schemas, shell-like input, arbitrary target rejection, read-only authorization, missing executables, command timeouts, capture limits, provider command parsing, provider failure, secret redaction, Kubernetes secret exclusion, idempotency conflicts, independent approval, approval expiry, rejection, stale generation, process restart invalidation, private storage permissions, and audit hash consistency.
+The Python suite exercises every runbook in healthy, supported-failure, and unavailable modes. It also covers malformed schemas, crafted CLI URL authorities and suffixes, prevention of credential-bearing outbound calls, shell-like input, arbitrary target rejection, read-only authorization, missing executables, command timeouts, capture limits, provider command parsing, provider failure, secret redaction, Kubernetes secret exclusion, idempotency conflicts, independent approval, approval expiry, rejection, stale generation, process restart invalidation, private storage permissions, and audit hash consistency.
 
 The test client emits an upstream Starlette/HTTPX deprecation warning. It is recorded, not suppressed. The Linux-only integration is intentionally skipped on macOS and executed in Docker. AWS analysis and GitHub failure classification are verified through controlled responses and unavailable paths. No authenticated AWS API calls were made. The GitHub collector additionally read the public OpsPilot repository through the live API; no unrelated repository was accessed. Network and TLS use fixed live destinations; real TLS behavior is verified locally without reliance on an external service.
 

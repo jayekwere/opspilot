@@ -1,7 +1,7 @@
 {
   "scope": "controlled disposable HTTP service lab",
   "diagnosis": {
-    "id": "ffe074bc-ecdd-4c31-9a0f-f6fa77030706",
+    "id": "d3887fa9-9402-4233-bada-12fca411d034",
     "actor": "lab-operator",
     "request": {
       "runbook": "service",
@@ -11,8 +11,8 @@
       "baseline_source": null
     },
     "status": "finding",
-    "started_at": 1793480994.605804,
-    "seconds": 0.08048037497792393,
+    "started_at": 1793482075.896003,
+    "seconds": 0.046894249971956015,
     "intervention_required": true,
     "findings": [
       {
@@ -30,7 +30,7 @@
   },
   "unapproved_execution_denied": true,
   "recovery": {
-    "id": "ffe074bc-ecdd-4c31-9a0f-f6fa77030706",
+    "id": "d3887fa9-9402-4233-bada-12fca411d034",
     "actor": "lab-operator",
     "request": {
       "runbook": "service",
@@ -40,8 +40,8 @@
       "baseline_source": null
     },
     "status": "finding",
-    "started_at": 1793480994.605804,
-    "seconds": 0.08048037497792393,
+    "started_at": 1793482075.896003,
+    "seconds": 0.046894249971956015,
     "intervention_required": true,
     "findings": [
       {
@@ -58,7 +58,7 @@
     "manual_effort_avoided_seconds": null,
     "remediation": {
       "outcome": "succeeded",
-      "seconds": 0.0062770419754087925,
+      "seconds": 0.005897874943912029,
       "verified": true,
       "failure_reason": null,
       "action": "recover_disposable_service"
@@ -66,7 +66,7 @@
   },
   "idempotent_replay": true,
   "healthy_verification": {
-    "id": "b2cfebb2-dc1c-412e-9a15-87f43303db23",
+    "id": "7594c077-73a1-4537-be1e-6e30f6b72a70",
     "actor": "lab-operator",
     "request": {
       "runbook": "service",
@@ -76,8 +76,8 @@
       "baseline_source": null
     },
     "status": "healthy",
-    "started_at": 1793480994.6975958,
-    "seconds": 0.006976917036809027,
+    "started_at": 1793482075.951966,
+    "seconds": 0.00552254100330174,
     "intervention_required": false,
     "findings": [],
     "evidence": {
@@ -87,7 +87,7 @@
     "manual_effort_avoided_seconds": null
   },
   "stale_approval_failure": {
-    "id": "d31065a7-20ea-4570-99cf-505f255e0271",
+    "id": "a4ba93c5-7890-482f-857b-d050cfbb8e56",
     "actor": "lab-operator",
     "request": {
       "runbook": "service",
@@ -97,8 +97,8 @@
       "baseline_source": null
     },
     "status": "finding",
-    "started_at": 1793480994.705944,
-    "seconds": 0.007167499978095293,
+    "started_at": 1793482075.958397,
+    "seconds": 0.006949207978323102,
     "intervention_required": true,
     "findings": [
       {
@@ -115,139 +115,139 @@
     "manual_effort_avoided_seconds": null,
     "remediation": {
       "outcome": "failed",
-      "seconds": 6.966700311750174e-05,
+      "seconds": 4.8874993808567524e-05,
       "verified": false,
       "failure_reason": "stale_lab_generation",
       "action": "recover_disposable_service"
     }
   },
-  "elapsed_seconds": 0.11577512498479337,
+  "elapsed_seconds": 0.07223991688806564,
   "audit": [
     {
       "seq": 14,
-      "at": 1793480994.721046,
+      "at": 1793482075.967846,
       "actor": "lab-operator",
       "event": "remediation_failed",
-      "subject": "9293bebf-f5ce-438b-9da2-dc08b8956391",
-      "previous": "86c38b497972e2fba20cbf91eff35568f066956244d005cdc02dd5273f876698",
-      "digest": "79ed5f159dde0249ff073a560c5869820605d189e1289f85595f1b028024e25c"
+      "subject": "f7a6246d-8a66-41f5-a812-70a62e66c1ea",
+      "previous": "e4d016cc4d053fc590ec75ec5d7045bda75cd02d68ba1b6af75738dc4683ea6f",
+      "digest": "872be0997d11dde11551d6db8336d374ba4370234819f9464cbcd15265fa32db"
     },
     {
       "seq": 13,
-      "at": 1793480994.720386,
+      "at": 1793482075.967396,
       "actor": "lab-operator",
       "event": "remediation_started",
-      "subject": "9293bebf-f5ce-438b-9da2-dc08b8956391",
-      "previous": "8ce6505dca7fe6504a631a494b6a0c22c334bb02e4ca8d3470df8382f81169dd",
-      "digest": "86c38b497972e2fba20cbf91eff35568f066956244d005cdc02dd5273f876698"
+      "subject": "f7a6246d-8a66-41f5-a812-70a62e66c1ea",
+      "previous": "0fd42e6daeb8dda25163aa13861ce19252571726901b9bd66c859f6f943df730",
+      "digest": "e4d016cc4d053fc590ec75ec5d7045bda75cd02d68ba1b6af75738dc4683ea6f"
     },
     {
       "seq": 12,
-      "at": 1793480994.719845,
+      "at": 1793482075.966954,
       "actor": "lab-approver",
       "event": "approval_approved",
-      "subject": "9293bebf-f5ce-438b-9da2-dc08b8956391",
-      "previous": "338e845c81d767ff435fd092460b81aa97b9580b408d44e1a0bf60aa26989a0c",
-      "digest": "8ce6505dca7fe6504a631a494b6a0c22c334bb02e4ca8d3470df8382f81169dd"
+      "subject": "f7a6246d-8a66-41f5-a812-70a62e66c1ea",
+      "previous": "4a5306fb4c9ae73a6477b7a06d2711555defc8118823862b7fe22ea482db6af4",
+      "digest": "0fd42e6daeb8dda25163aa13861ce19252571726901b9bd66c859f6f943df730"
     },
     {
       "seq": 11,
-      "at": 1793480994.719042,
+      "at": 1793482075.966534,
       "actor": "lab-operator",
       "event": "approval_requested",
-      "subject": "9293bebf-f5ce-438b-9da2-dc08b8956391",
-      "previous": "002320aa71b0ee2956673568df9a7eb1e4adfbf68c22a3a8c7401fd716ea38a1",
-      "digest": "338e845c81d767ff435fd092460b81aa97b9580b408d44e1a0bf60aa26989a0c"
+      "subject": "f7a6246d-8a66-41f5-a812-70a62e66c1ea",
+      "previous": "2dd46205446418eebc80cf562b3a61b4af2fdeb9fc909a37d02ad56535059f75",
+      "digest": "4a5306fb4c9ae73a6477b7a06d2711555defc8118823862b7fe22ea482db6af4"
     },
     {
       "seq": 10,
-      "at": 1793480994.715521,
+      "at": 1793482075.966023,
       "actor": "lab-operator",
       "event": "diagnosis_finding",
-      "subject": "d31065a7-20ea-4570-99cf-505f255e0271",
-      "previous": "9fb562bdc996180ff7f0640917e8f76a10c7d84eb5294a55e26a545e04ef82a4",
-      "digest": "002320aa71b0ee2956673568df9a7eb1e4adfbf68c22a3a8c7401fd716ea38a1"
+      "subject": "a4ba93c5-7890-482f-857b-d050cfbb8e56",
+      "previous": "85a089f294c46091f9c41a5b3984da93c77dc67ce17705556131dbe7a86b9a69",
+      "digest": "2dd46205446418eebc80cf562b3a61b4af2fdeb9fc909a37d02ad56535059f75"
     },
     {
       "seq": 9,
-      "at": 1793480994.706174,
+      "at": 1793482075.9585369,
       "actor": "lab-operator",
       "event": "diagnosis_started",
-      "subject": "d31065a7-20ea-4570-99cf-505f255e0271",
-      "previous": "d594b307f002b6e4f7f3484d7a881bdc1fd242d79dea11f3bb799db90fa7bd53",
-      "digest": "9fb562bdc996180ff7f0640917e8f76a10c7d84eb5294a55e26a545e04ef82a4"
+      "subject": "a4ba93c5-7890-482f-857b-d050cfbb8e56",
+      "previous": "a2cf38f6faeedb9851f9c829b4964e22494c179e6036f70983ac377350cde5a8",
+      "digest": "85a089f294c46091f9c41a5b3984da93c77dc67ce17705556131dbe7a86b9a69"
     },
     {
       "seq": 8,
-      "at": 1793480994.7054138,
+      "at": 1793482075.958078,
       "actor": "lab-operator",
       "event": "diagnosis_healthy",
-      "subject": "b2cfebb2-dc1c-412e-9a15-87f43303db23",
-      "previous": "ddc7eb9f23025c25f91461994beed74ff12714e11754383d2cd60aa1b3f0130a",
-      "digest": "d594b307f002b6e4f7f3484d7a881bdc1fd242d79dea11f3bb799db90fa7bd53"
+      "subject": "7594c077-73a1-4537-be1e-6e30f6b72a70",
+      "previous": "ccf55b673b1440eed48bea11e56a7a5932be11a9e1fbbb7aede64cf8485dfee5",
+      "digest": "a2cf38f6faeedb9851f9c829b4964e22494c179e6036f70983ac377350cde5a8"
     },
     {
       "seq": 7,
-      "at": 1793480994.697781,
+      "at": 1793482075.952105,
       "actor": "lab-operator",
       "event": "diagnosis_started",
-      "subject": "b2cfebb2-dc1c-412e-9a15-87f43303db23",
-      "previous": "f6e08485c186c3b37b7c9b0e43ce6585b9cdb902454e774d445d85c7de67dde6",
-      "digest": "ddc7eb9f23025c25f91461994beed74ff12714e11754383d2cd60aa1b3f0130a"
+      "subject": "7594c077-73a1-4537-be1e-6e30f6b72a70",
+      "previous": "109e6efd4d45089495d539784b0ca74361d15b765269100184a0b63d1e04ca8a",
+      "digest": "ccf55b673b1440eed48bea11e56a7a5932be11a9e1fbbb7aede64cf8485dfee5"
     },
     {
       "seq": 6,
-      "at": 1793480994.696512,
+      "at": 1793482075.951583,
       "actor": "lab-operator",
       "event": "remediation_succeeded",
-      "subject": "cfa58e8d-d4b7-4121-8838-783d7d2d878c",
-      "previous": "a4590a585baae0476ff70f707e0bac262ae3567b1f07b99e08e94bda0c2955da",
-      "digest": "f6e08485c186c3b37b7c9b0e43ce6585b9cdb902454e774d445d85c7de67dde6"
+      "subject": "65e8de65-582c-46b8-b6b1-309277e2698e",
+      "previous": "66c10206d24c37c076679024174737c588b63fed096ff49fcaebffc399e29cf9",
+      "digest": "109e6efd4d45089495d539784b0ca74361d15b765269100184a0b63d1e04ca8a"
     },
     {
       "seq": 5,
-      "at": 1793480994.689588,
+      "at": 1793482075.9452028,
       "actor": "lab-operator",
       "event": "remediation_started",
-      "subject": "cfa58e8d-d4b7-4121-8838-783d7d2d878c",
-      "previous": "b919f0ad52e6f4fdf7f0cb357a04af971455468b46d969bc12c0cb577d76839a",
-      "digest": "a4590a585baae0476ff70f707e0bac262ae3567b1f07b99e08e94bda0c2955da"
+      "subject": "65e8de65-582c-46b8-b6b1-309277e2698e",
+      "previous": "7ca69dbbeb11bc0afea3668537a7178a9442348c93a63a1b797d016ecd03820c",
+      "digest": "66c10206d24c37c076679024174737c588b63fed096ff49fcaebffc399e29cf9"
     },
     {
       "seq": 4,
-      "at": 1793480994.6889758,
+      "at": 1793482075.9448168,
       "actor": "lab-approver",
       "event": "approval_approved",
-      "subject": "cfa58e8d-d4b7-4121-8838-783d7d2d878c",
-      "previous": "9f3333b2f39cfbcb12c52cce68d5d2e8a57e92e38f40dae34432bcd869ce3f46",
-      "digest": "b919f0ad52e6f4fdf7f0cb357a04af971455468b46d969bc12c0cb577d76839a"
+      "subject": "65e8de65-582c-46b8-b6b1-309277e2698e",
+      "previous": "ebe43b554e600fccaf1db6b6524a349b64c75029012801e8232e811c8b3cb063",
+      "digest": "7ca69dbbeb11bc0afea3668537a7178a9442348c93a63a1b797d016ecd03820c"
     },
     {
       "seq": 3,
-      "at": 1793480994.6880891,
+      "at": 1793482075.944347,
       "actor": "lab-operator",
       "event": "approval_requested",
-      "subject": "cfa58e8d-d4b7-4121-8838-783d7d2d878c",
-      "previous": "591a842d154a1335dd2036213844abe1d6b28b66b5d3f6d63b6c9f68aecb0593",
-      "digest": "9f3333b2f39cfbcb12c52cce68d5d2e8a57e92e38f40dae34432bcd869ce3f46"
+      "subject": "65e8de65-582c-46b8-b6b1-309277e2698e",
+      "previous": "2057e9b147670ffeac82da78c94c7b79403bf202fdda683c5c62e7d69328b565",
+      "digest": "ebe43b554e600fccaf1db6b6524a349b64c75029012801e8232e811c8b3cb063"
     },
     {
       "seq": 2,
-      "at": 1793480994.6872551,
+      "at": 1793482075.943734,
       "actor": "lab-operator",
       "event": "diagnosis_finding",
-      "subject": "ffe074bc-ecdd-4c31-9a0f-f6fa77030706",
-      "previous": "07cf345ea5b44222ab8153d1691d6d0efba76c2f17692e3fbf35fe64f393d665",
-      "digest": "591a842d154a1335dd2036213844abe1d6b28b66b5d3f6d63b6c9f68aecb0593"
+      "subject": "d3887fa9-9402-4233-bada-12fca411d034",
+      "previous": "711b4297a26c0f6e79928749caecb0ae0b187fbd31bbe3eb19476bc8e046ab88",
+      "digest": "2057e9b147670ffeac82da78c94c7b79403bf202fdda683c5c62e7d69328b565"
     },
     {
       "seq": 1,
-      "at": 1793480994.606024,
+      "at": 1793482075.8961668,
       "actor": "lab-operator",
       "event": "diagnosis_started",
-      "subject": "ffe074bc-ecdd-4c31-9a0f-f6fa77030706",
+      "subject": "d3887fa9-9402-4233-bada-12fca411d034",
       "previous": "0000000000000000000000000000000000000000000000000000000000000000",
-      "digest": "07cf345ea5b44222ab8153d1691d6d0efba76c2f17692e3fbf35fe64f393d665"
+      "digest": "711b4297a26c0f6e79928749caecb0ae0b187fbd31bbe3eb19476bc8e046ab88"
     }
   ],
   "metrics": {
@@ -256,7 +256,7 @@
     "success_rate": 1.0,
     "failure_rate": 0.0,
     "intervention_runs": 2,
-    "automated_seconds": 0.09462479199282825,
+    "automated_seconds": 0.059365998953580856,
     "manual_seconds": 0,
     "estimated_effort_avoided_seconds": 0,
     "baseline_runs": 0,
