@@ -9,15 +9,15 @@ npm run lint
 > opspilot@0.1.1 lint
 > biome check .
 
-Checked 7 files in 77ms. No fixes applied.
+Checked 7 files in 255ms. No fixes applied.
 npm run typecheck
 
 > opspilot@0.1.1 typecheck
 > tsc --noEmit
 
 .venv/bin/python -m pytest
-......................................................s................. [ 63%]
-..........................................                               [100%]
+..........................................................s............. [ 61%]
+..............................................                           [100%]
 =============================== warnings summary ===============================
 .venv/lib/python3.14/site-packages/fastapi/testclient.py:1
   /Users/jayekwere/Documents/ChatGPT/Github Portfolio Engineer/repos/opspilot/.venv/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
@@ -31,7 +31,7 @@ Name                   Stmts   Miss Branch BrPart  Cover   Missing
 ------------------------------------------------------------------
 opspilot/__init__.py       0      0      0      0   100%
 opspilot/api.py          154     14     24      4    90%   33-34, 67-68, 76, 78-79, 83-84, 146, 150-151, 186-187, 220->222
-opspilot/cli.py           90     16     12      1    75%   126-163, 167
+opspilot/cli.py           93      8     14      5    88%   127, 136-139, 149-150, 154, 170
 opspilot/engine.py         3      3      2      0     0%   3-6
 opspilot/lab.py           47      1      6      1    96%   55
 opspilot/models.py        25      0      0      0   100%
@@ -40,10 +40,10 @@ opspilot/runner.py        39      1      6      1    96%   133
 opspilot/service.py      132     10     36      7    90%   51, 74-76, 114, 135, 139, 154, 156, 170->176, 174-175
 opspilot/store.py         76      9     18      3    87%   43, 70-74, 83, 109-110
 ------------------------------------------------------------------
-TOTAL                    782     72    252     25    89%
+TOTAL                    785     64    254     29    90%
 Coverage XML written to file coverage.xml
-Required test coverage of 85% reached. Total coverage: 89.07%
-113 passed, 1 skipped, 1 warning in 8.08s
+Required test coverage of 85% reached. Total coverage: 90.28%
+117 passed, 1 skipped, 1 warning in 6.50s
 npm run build
 
 > opspilot@0.1.1 build
@@ -58,8 +58,8 @@ dist/index.html                   0.46 kB │ gzip:  0.31 kB
 dist/assets/index-Nk3NU4WT.css   11.20 kB │ gzip:  3.28 kB
 dist/assets/index-BDUHps93.js   206.64 kB │ gzip: 64.46 kB
 
-✓ built in 679ms
+✓ built in 211ms
 .venv/bin/python -m opspilot.cli demo
-{"recovery": {"outcome": "succeeded", "seconds": 0.006347124930471182, "verified": true, "failure_reason": null, "action": "recover_disposable_service"}, "report": "docs/demo-result.json"}
+{"recovery": {"outcome": "succeeded", "seconds": 0.0072689170483499765, "verified": true, "failure_reason": null, "action": "recover_disposable_service"}, "report": "docs/demo-result.json"}
 .venv/bin/python -m scripts.benchmark
 docs/benchmark.json

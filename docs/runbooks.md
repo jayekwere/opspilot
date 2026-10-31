@@ -30,3 +30,5 @@ Completed execution replays the recorded result. Rejected, expired, interrupted,
 ## Repeated monitoring
 
 The CLI can be invoked by an existing trusted scheduler to repeat fixed-target TLS, filesystem, or service checks. Set the operator credential in that scheduler's protected environment, use a read-only identity, and preserve the API run records. OpsPilot does not yet provide an internal distributed scheduler or alert delivery service. An unavailable provider is reported as an operational failure rather than a healthy system.
+
+CLI diagnoses exit 0 for healthy or finding outcomes and exit 2 for unavailable or failed outcomes. Structured JSON evidence is printed in both cases. HTTP authorization and transport errors also return a nonzero process status.

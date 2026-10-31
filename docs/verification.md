@@ -4,13 +4,13 @@ Verified locally on October 31, 2026. Host: macOS ARM64, Python 3.14.6, Node 26.
 
 | Check | Result | Evidence |
 | --- | --- | --- |
-| Python unit, integration, adversarial, and workflow tests | 113 passed; 1 Linux-only test skipped on macOS; 89.07% branch-aware coverage | [Local verification](local-verification.txt) |
+| Python unit, integration, adversarial, and workflow tests | 117 passed; 1 Linux-only test skipped on macOS; 90.28% branch-aware coverage | [Local verification](local-verification.txt) |
 | Python lint, formatting, and typechecking | Passed | [Local verification](local-verification.txt) |
 | TypeScript lint, formatting, and typechecking | Passed | [Local verification](local-verification.txt) |
 | Production React build | Passed | [Local verification](local-verification.txt) |
 | Authenticated CLI | Fixture diagnosis completed through the real local API | [CLI validation](cli-validation.json) |
 | Browser end-to-end scenarios | 3 passed: console/evidence/mobile, independent approval/recovery, rejected authentication | [Browser results](browser-tests.txt) |
-| Linux Docker suite | 114 passed, including real Linux `/proc` integration | [Container verification](container-verification.txt) |
+| Linux Docker suite | 118 passed, including real Linux `/proc` integration | [Container verification](container-verification.txt) |
 | Restricted runtime smoke | Authentication, unapproved execution denial, approved recovery, dashboard serving | [Structured smoke report](container-smoke.json) |
 | Service troubleshooting demo | Detection, evidence, recommendation, approval, recovery, verification, safe replay, stale-generation failure | [Demo](demo-result.json) |
 | Security remediation | Temporary configuration and permission repair, followed by healthy recollection | Python integration test `test_security_recovery` |

@@ -160,7 +160,10 @@ def main() -> None:
             trust_env=False,
         )
         response.raise_for_status()
-        print(json.dumps(response.json(), indent=2))
+        record = response.json()
+        print(json.dumps(record, indent=2))
+        if record["status"] in ("unavailable", "failed"):
+            raise SystemExit(2)
 
 
 if __name__ == "__main__":

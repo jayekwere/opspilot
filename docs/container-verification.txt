@@ -3,22 +3,22 @@ docker build --target test -t opspilot:test .
 
 #1 [internal] load build definition from Dockerfile
 #1 transferring dockerfile: 1.74kB 0.0s done
-#1 DONE 0.1s
+#1 DONE 0.0s
 
 #2 [internal] load metadata for docker.io/library/python:3.14-slim@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8
-#2 DONE 0.3s
+#2 DONE 0.1s
 
 #3 [internal] load .dockerignore
 #3 transferring context: 190B done
 #3 DONE 0.0s
 
-#4 [test 1/8] FROM docker.io/library/python:3.14-slim@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8
-#4 resolve docker.io/library/python:3.14-slim@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8 0.1s done
-#4 DONE 0.1s
+#4 [internal] load build context
+#4 transferring context: 294.96kB 0.1s done
+#4 DONE 0.2s
 
-#5 [internal] load build context
-#5 transferring context: 324.70kB 0.3s done
-#5 DONE 0.3s
+#5 [test 1/8] FROM docker.io/library/python:3.14-slim@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8
+#5 resolve docker.io/library/python:3.14-slim@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8 0.1s done
+#5 DONE 0.1s
 
 #6 [test 2/8] WORKDIR /app
 #6 CACHED
@@ -30,56 +30,52 @@ docker build --target test -t opspilot:test .
 #8 CACHED
 
 #9 [test 5/8] COPY opspilot ./opspilot
-#9 DONE 0.7s
+#9 DONE 0.2s
 
 #10 [test 6/8] COPY tests ./tests
-#10 DONE 0.9s
+#10 DONE 0.1s
 
 #11 [test 7/8] COPY scripts ./scripts
 #11 DONE 0.1s
 
 #12 [test 8/8] COPY pyproject.toml ./
-#12 DONE 0.4s
+#12 DONE 0.1s
 
 #13 exporting to image
 #13 exporting layers
 #13 exporting layers 0.2s done
-#13 exporting manifest sha256:ebab26d237cd41eafeb0030841e4ca7760bd405f25e50098a2c3f4c8c589c726 0.0s done
-#13 exporting config sha256:e6d7a12391ed7d132a33387aefb0c31ef0c6620f42793dcdf18af5cbf15d07aa 0.0s done
-#13 exporting attestation manifest sha256:dee880acd820d704a7e24092619f963c7469d85b86cd13b87cd6c86eab1643ee
-#13 exporting attestation manifest sha256:dee880acd820d704a7e24092619f963c7469d85b86cd13b87cd6c86eab1643ee 0.5s done
-#13 exporting manifest list sha256:def96ca42709abd12e38fd5a1090f38d18dd8ea2a8d03927ef22f13a748f1f05
-#13 exporting manifest list sha256:def96ca42709abd12e38fd5a1090f38d18dd8ea2a8d03927ef22f13a748f1f05 0.2s done
-#13 naming to docker.io/library/opspilot:test
-#13 naming to docker.io/library/opspilot:test 0.1s done
-#13 unpacking to docker.io/library/opspilot:test
-#13 unpacking to docker.io/library/opspilot:test 1.5s done
-#13 DONE 2.6s
+#13 exporting manifest sha256:5122d35939fc7e7b8583534b958a5bcdb37c18dc1d16bd0fe76d5d19fdb9804c 0.0s done
+#13 exporting config sha256:7aef0560aa41b6b1459e70112fa45be360f289e3dfa5f39f052e808ece159885 0.0s done
+#13 exporting attestation manifest sha256:0d5753f7d5e83d2b318b4b57d3552b6db59eca38d295103d9e6d1aaa7c6ba0e3 0.0s done
+#13 exporting manifest list sha256:bca8753699c7276196a00e913f46ac65a24c1a8f66291b818fedb7aa3b8354e0 0.0s done
+#13 naming to docker.io/library/opspilot:test done
+#13 unpacking to docker.io/library/opspilot:test 0.1s done
+#13 DONE 0.4s
 docker run --rm --cap-drop ALL --security-opt no-new-privileges --memory 512m --cpus 1 --pids-limit 128 opspilot:test
-........................................................................ [ 63%]
-..........................................                               [100%]
+........................................................................ [ 61%]
+..............................................                           [100%]
 =============================== warnings summary ===============================
 ../usr/local/lib/python3.14/site-packages/fastapi/testclient.py:1
   /usr/local/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
     from starlette.testclient import TestClient as TestClient  # noqa
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-114 passed, 1 warning in 4.94s
+118 passed, 1 warning in 6.28s
 docker build --target runtime -t opspilot:local .
 #0 building with "desktop-linux" instance using docker driver
 
 #1 [internal] load build definition from Dockerfile
 #1 transferring dockerfile: 1.74kB 0.0s done
-#1 DONE 0.1s
+#1 DONE 0.0s
 
-#2 [internal] load metadata for docker.io/library/python:3.14-slim@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8
+#2 [internal] load metadata for docker.io/library/node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c
 #2 DONE 0.0s
 
-#3 [internal] load metadata for docker.io/library/node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c
+#3 [internal] load metadata for docker.io/library/python:3.14-slim@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8
 #3 DONE 0.0s
 
 #4 [internal] load .dockerignore
-#4 transferring context: 190B done
+#4 transferring context: 190B 0.0s done
 #4 DONE 0.0s
 
 #5 [web 1/7] FROM docker.io/library/node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c
@@ -94,31 +90,31 @@ docker build --target runtime -t opspilot:local .
 #7 transferring context: 94.78kB 0.0s done
 #7 DONE 0.0s
 
-#8 [runtime 2/6] WORKDIR /app
+#8 [web 4/7] RUN npm ci --ignore-scripts
 #8 CACHED
 
-#9 [runtime 3/6] COPY requirements.lock ./
+#9 [web 5/7] COPY tsconfig.json index.html ./
 #9 CACHED
 
-#10 [runtime 4/6] RUN python -m pip install --no-cache-dir --upgrade pip==26.2.2 && python -m pip install --no-cache-dir --require-hashes -r requirements.lock && groupadd -g 10001 opspilot && useradd -u 10001 -g 10001 -M opspilot && mkdir /state && chown 10001:10001 /state
+#10 [web 2/7] WORKDIR /build
 #10 CACHED
 
-#11 [web 6/7] COPY web ./web
+#11 [web 3/7] COPY package.json package-lock.json ./
 #11 CACHED
 
-#12 [web 5/7] COPY tsconfig.json index.html ./
+#12 [web 6/7] COPY web ./web
 #12 CACHED
 
-#13 [web 3/7] COPY package.json package-lock.json ./
+#13 [runtime 2/6] WORKDIR /app
 #13 CACHED
 
-#14 [web 2/7] WORKDIR /build
+#14 [runtime 3/6] COPY requirements.lock ./
 #14 CACHED
 
-#15 [web 4/7] RUN npm ci --ignore-scripts
+#15 [web 7/7] RUN npm run build
 #15 CACHED
 
-#16 [web 7/7] RUN npm run build
+#16 [runtime 4/6] RUN python -m pip install --no-cache-dir --upgrade pip==26.2.2 && python -m pip install --no-cache-dir --require-hashes -r requirements.lock && groupadd -g 10001 opspilot && useradd -u 10001 -g 10001 -M opspilot && mkdir /state && chown 10001:10001 /state
 #16 CACHED
 
 #17 [runtime 5/6] COPY opspilot ./opspilot
@@ -129,10 +125,10 @@ docker build --target runtime -t opspilot:local .
 
 #19 exporting to image
 #19 exporting layers 0.1s done
-#19 exporting manifest sha256:e699f14f5ed01bdb3f3277e46e8384ff3b9f6ac4d313e325037a452deac6cfe9 done
-#19 exporting config sha256:bc42b9f07bcc6baf9ea80fe7da2b98dc58799703579ad99084953a3386ac00bf 0.0s done
-#19 exporting attestation manifest sha256:e6ed1a18b494966af8815ecd66eed56ad68f6472474f43e466b29d34335c6f6b 0.0s done
-#19 exporting manifest list sha256:8cf894b3ec51f30231b87509f7fc1993047e0593f8a95e6a3fcf14443fe4a0c7 done
+#19 exporting manifest sha256:dd8fe1b7b1b17fec6ebe5816098856c0249e0b2af23da4f456ef6cf6a218d7de 0.0s done
+#19 exporting config sha256:6a4ece2a61f995e737f21efd7a1b587b53dd132c4d9bed62d03cc6b40dc222d9 done
+#19 exporting attestation manifest sha256:0944270da417911d74f253b054dcb8429d016f36fc4d4aa3ed1c276dd592cb2f 0.0s done
+#19 exporting manifest list sha256:62b0d647c5e58cbc72ec850467012ae147c72a453f354ef596114f2f2ad0dfb0 done
 #19 naming to docker.io/library/opspilot:local done
 #19 unpacking to docker.io/library/opspilot:local 0.0s done
 #19 DONE 0.2s
