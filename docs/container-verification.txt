@@ -6,192 +6,65 @@ docker build --target test -t opspilot:test .
 #1 DONE 0.1s
 
 #2 [internal] load metadata for docker.io/library/python:3.14-slim@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8
-#2 DONE 1.1s
+#2 DONE 0.3s
 
 #3 [internal] load .dockerignore
-#3 transferring context: 190B 0.0s done
+#3 transferring context: 190B done
 #3 DONE 0.0s
 
-#4 [internal] load build context
-#4 ...
+#4 [test 1/8] FROM docker.io/library/python:3.14-slim@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8
+#4 resolve docker.io/library/python:3.14-slim@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8 0.1s done
+#4 DONE 0.1s
 
-#5 [test 1/8] FROM docker.io/library/python:3.14-slim@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8
-#5 resolve docker.io/library/python:3.14-slim@sha256:cd89c30eda26ee911a4611b18680086e0ea42e6f5f8cbe653d07fa7958c9cec8 0.0s done
-#5 DONE 0.1s
+#5 [internal] load build context
+#5 transferring context: 324.70kB 0.3s done
+#5 DONE 0.3s
 
 #6 [test 2/8] WORKDIR /app
 #6 CACHED
 
-#4 [internal] load build context
-#4 transferring context: 320.56kB 0.1s done
-#4 DONE 0.2s
-
 #7 [test 3/8] COPY requirements-dev.lock ./
-#7 DONE 0.3s
+#7 CACHED
 
 #8 [test 4/8] RUN python -m pip install --no-cache-dir --upgrade pip==26.2.2 && python -m pip install --no-cache-dir --require-hashes -r requirements-dev.lock && groupadd -g 10001 opspilot && useradd -u 10001 -g 10001 -M opspilot && mkdir /reports && chown 10001:10001 /reports
-#8 6.483 Requirement already satisfied: pip==26.2.2 in /usr/local/lib/python3.14/site-packages (26.2.2)
-#8 6.813 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
-#8 8.194 Collecting annotated-doc==0.0.5 (from -r requirements-dev.lock (line 2))
-#8 8.269   Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
-#8 8.289 Collecting annotated-types==0.8.0 (from -r requirements-dev.lock (line 6))
-#8 8.384   Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
-#8 8.404 Collecting anyio==4.15.1 (from -r requirements-dev.lock (line 10))
-#8 8.419   Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
-#8 8.526 Collecting ast_serialize==0.13.1 (from -r requirements-dev.lock (line 14))
-#8 8.556   Downloading ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.3 MB)
-#8 8.653      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 13.5 MB/s  0:00:00
-#8 8.670 Collecting bandit==1.9.4 (from -r requirements-dev.lock (line 73))
-#8 8.681   Downloading bandit-1.9.4-py3-none-any.whl (134 kB)
-#8 8.696 Collecting boolean.py==5.0 (from -r requirements-dev.lock (line 77))
-#8 8.707   Downloading boolean_py-5.0-py3-none-any.whl (26 kB)
-#8 8.721 Collecting CacheControl==0.14.4 (from -r requirements-dev.lock (line 81))
-#8 8.731   Downloading cachecontrol-0.14.4-py3-none-any.whl (22 kB)
-#8 8.747 Collecting certifi==2026.10.23 (from -r requirements-dev.lock (line 85))
-#8 8.755   Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
-#8 8.867 Collecting charset-normalizer==3.5.2 (from -r requirements-dev.lock (line 89))
-#8 8.908   Downloading charset_normalizer-3.5.2-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (247 kB)
-#8 8.930 Collecting click==8.5.0 (from -r requirements-dev.lock (line 263))
-#8 8.943   Downloading click-8.5.0-py3-none-any.whl (125 kB)
-#8 9.406 Collecting coverage==7.17.0 (from -r requirements-dev.lock (line 267))
-#8 9.453   Downloading coverage-7.17.0-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (262 kB)
-#8 9.482 Collecting cyclonedx-python-lib==11.12.0 (from -r requirements-dev.lock (line 388))
-#8 9.501   Downloading cyclonedx_python_lib-11.12.0-py3-none-any.whl (529 kB)
-#8 9.540      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 529.5/529.5 kB 11.2 MB/s  0:00:00
-#8 9.556 Collecting defusedxml==0.7.1 (from -r requirements-dev.lock (line 392))
-#8 9.575   Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
-#8 9.617 Collecting fastapi==0.162.0 (from -r requirements-dev.lock (line 396))
-#8 9.643   Downloading fastapi-0.162.0-py3-none-any.whl (148 kB)
-#8 9.673 Collecting filelock==4.2.6 (from -r requirements-dev.lock (line 400))
-#8 9.686   Downloading filelock-4.2.6-py3-none-any.whl (164 kB)
-#8 9.714 Collecting h11==0.16.0 (from -r requirements-dev.lock (line 404))
-#8 9.726   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
-#8 9.753 Collecting httpcore==1.0.9 (from -r requirements-dev.lock (line 408))
-#8 9.763   Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
-#8 9.778 Collecting httpx==0.28.1 (from -r requirements-dev.lock (line 412))
-#8 9.793   Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
-#8 9.804 Collecting idna==3.20 (from -r requirements-dev.lock (line 416))
-#8 9.814   Downloading idna-3.20-py3-none-any.whl (69 kB)
-#8 9.827 Collecting iniconfig==2.3.1 (from -r requirements-dev.lock (line 420))
-#8 9.841   Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
-#8 10.02 Collecting librt==0.16.0 (from -r requirements-dev.lock (line 424))
-#8 10.03   Downloading librt-0.16.0-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (494 kB)
-#8 10.06 Collecting license-expression==30.4.4 (from -r requirements-dev.lock (line 563))
-#8 10.06   Downloading license_expression-30.4.4-py3-none-any.whl (120 kB)
-#8 10.10 Collecting markdown-it-py==4.2.0 (from -r requirements-dev.lock (line 567))
-#8 10.22   Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
-#8 10.23 Collecting mdurl==0.1.2 (from -r requirements-dev.lock (line 571))
-#8 10.24   Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
-#8 10.31 Collecting msgpack==1.2.4 (from -r requirements-dev.lock (line 575))
-#8 10.32   Downloading msgpack-1.2.4-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (455 kB)
-#8 10.40 Collecting mypy==2.4.1 (from -r requirements-dev.lock (line 668))
-#8 10.48   Downloading mypy-2.4.1-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (14.4 MB)
-#8 11.07      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.4/14.4 MB 24.8 MB/s  0:00:00
-#8 11.14 Collecting mypy_extensions==1.1.0 (from -r requirements-dev.lock (line 722))
-#8 11.15   Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
-#8 11.17 Collecting opentelemetry-api==1.45.2 (from -r requirements-dev.lock (line 726))
-#8 11.18   Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
-#8 11.20 Collecting packageurl-python==0.17.6 (from -r requirements-dev.lock (line 730))
-#8 11.21   Downloading packageurl_python-0.17.6-py3-none-any.whl (36 kB)
-#8 11.23 Collecting packaging==26.3 (from -r requirements-dev.lock (line 734))
-#8 11.24   Downloading packaging-26.3-py3-none-any.whl (129 kB)
-#8 11.27 Collecting pathspec==1.1.1 (from -r requirements-dev.lock (line 738))
-#8 11.28   Downloading pathspec-1.1.1-py3-none-any.whl (57 kB)
-#8 11.29 Collecting pip-requirements-parser==32.0.1 (from -r requirements-dev.lock (line 742))
-#8 11.31   Downloading pip_requirements_parser-32.0.1-py3-none-any.whl (35 kB)
-#8 11.32 Collecting pip_api==0.0.35 (from -r requirements-dev.lock (line 746))
-#8 11.34   Downloading pip_api-0.0.35-py3-none-any.whl (123 kB)
-#8 11.36 Collecting pip_audit==2.10.1 (from -r requirements-dev.lock (line 750))
-#8 11.37   Downloading pip_audit-2.10.1-py3-none-any.whl (62 kB)
-#8 11.38 Collecting platformdirs==4.14.2 (from -r requirements-dev.lock (line 754))
-#8 11.40   Downloading platformdirs-4.14.2-py3-none-any.whl (35 kB)
-#8 11.41 Collecting pluggy==1.7.0 (from -r requirements-dev.lock (line 758))
-#8 11.42   Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
-#8 11.43 Collecting py-serializable==2.1.0 (from -r requirements-dev.lock (line 762))
-#8 11.53   Downloading py_serializable-2.1.0-py3-none-any.whl (23 kB)
-#8 11.59 Collecting pydantic==2.14.2 (from -r requirements-dev.lock (line 766))
-#8 11.60   Downloading pydantic-2.14.2-py3-none-any.whl (490 kB)
-#8 13.11 Collecting pydantic_core==2.50.2 (from -r requirements-dev.lock (line 770))
-#8 13.12   Downloading pydantic_core-2.50.2-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.whl (2.1 MB)
-#8 13.17      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 43.4 MB/s  0:00:00
-#8 13.19 Collecting Pygments==2.21.0 (from -r requirements-dev.lock (line 913))
-#8 13.19   Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
-#8 13.22      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 57.3 MB/s  0:00:00
-#8 13.24 Collecting pyparsing==3.3.3 (from -r requirements-dev.lock (line 917))
-#8 13.25   Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
-#8 13.28 Collecting pytest==9.2.0 (from -r requirements-dev.lock (line 921))
-#8 13.29   Downloading pytest-9.2.0-py3-none-any.whl (411 kB)
-#8 13.32 Collecting pytest-cov==7.1.0 (from -r requirements-dev.lock (line 925))
-#8 13.33   Downloading pytest_cov-7.1.0-py3-none-any.whl (22 kB)
-#8 13.35 Collecting PyYAML==6.0.3 (from -r requirements-dev.lock (line 929))
-#8 13.37   Downloading pyyaml-6.0.3-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (766 kB)
-#8 13.38      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 766.5/766.5 kB 58.6 MB/s  0:00:00
-#8 13.40 Collecting requests==2.34.2 (from -r requirements-dev.lock (line 1004))
-#8 13.41   Downloading requests-2.34.2-py3-none-any.whl (73 kB)
-#8 13.43 Collecting rich==15.0.0 (from -r requirements-dev.lock (line 1008))
-#8 13.44   Downloading rich-15.0.0-py3-none-any.whl (310 kB)
-#8 13.63 Collecting ruff==0.17.3 (from -r requirements-dev.lock (line 1012))
-#8 13.64   Downloading ruff-0.17.3-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (10.1 MB)
-#8 14.05      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.1/10.1 MB 25.4 MB/s  0:00:00
-#8 14.15 Collecting sortedcontainers==2.4.0 (from -r requirements-dev.lock (line 1032))
-#8 14.17   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
-#8 14.20 Collecting starlette==1.10.0 (from -r requirements-dev.lock (line 1036))
-#8 14.22   Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
-#8 14.31 Collecting stevedore==5.9.1 (from -r requirements-dev.lock (line 1040))
-#8 14.35   Downloading stevedore-5.9.1-py3-none-any.whl (54 kB)
-#8 14.61 Collecting tomli==2.5.0 (from -r requirements-dev.lock (line 1044))
-#8 14.67   Downloading tomli-2.5.0-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (273 kB)
-#8 14.70 Collecting tomli_w==1.2.0 (from -r requirements-dev.lock (line 1111))
-#8 14.71   Downloading tomli_w-1.2.0-py3-none-any.whl (6.7 kB)
-#8 14.73 Collecting typing-inspection==0.4.4 (from -r requirements-dev.lock (line 1115))
-#8 14.74   Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
-#8 14.76 Collecting typing_extensions==4.16.0 (from -r requirements-dev.lock (line 1119))
-#8 14.77   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
-#8 14.79 Collecting urllib3==2.8.0 (from -r requirements-dev.lock (line 1123))
-#8 14.80   Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
-#8 14.83 Collecting uvicorn==0.54.0 (from -r requirements-dev.lock (line 1127))
-#8 14.84   Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
-#8 14.87 Requirement already satisfied: pip in /usr/local/lib/python3.14/site-packages (from pip_api==0.0.35->-r requirements-dev.lock (line 746)) (26.2.2)
-#8 15.04 Installing collected packages: sortedcontainers, boolean.py, urllib3, typing_extensions, tomli_w, tomli, stevedore, ruff, PyYAML, pyparsing, Pygments, pluggy, platformdirs, pip_api, pathspec, packaging, packageurl-python, mypy_extensions, msgpack, mdurl, license-expression, librt, iniconfig, idna, h11, filelock, defusedxml, coverage, click, charset-normalizer, certifi, ast_serialize, annotated-types, annotated-doc, uvicorn, typing-inspection, requests, pytest, pydantic_core, py-serializable, pip-requirements-parser, opentelemetry-api, mypy, markdown-it-py, httpcore, anyio, starlette, rich, pytest-cov, pydantic, httpx, cyclonedx-python-lib, CacheControl, fastapi, bandit, pip_audit
-#8 67.96
-#8 67.98 Successfully installed CacheControl-0.14.4 PyYAML-6.0.3 Pygments-2.21.0 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 ast_serialize-0.13.1 bandit-1.9.4 boolean.py-5.0 certifi-2026.10.23 charset-normalizer-3.5.2 click-8.5.0 coverage-7.17.0 cyclonedx-python-lib-11.12.0 defusedxml-0.7.1 fastapi-0.162.0 filelock-4.2.6 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.20 iniconfig-2.3.1 librt-0.16.0 license-expression-30.4.4 markdown-it-py-4.2.0 mdurl-0.1.2 msgpack-1.2.4 mypy-2.4.1 mypy_extensions-1.1.0 opentelemetry-api-1.45.2 packageurl-python-0.17.6 packaging-26.3 pathspec-1.1.1 pip-requirements-parser-32.0.1 pip_api-0.0.35 pip_audit-2.10.1 platformdirs-4.14.2 pluggy-1.7.0 py-serializable-2.1.0 pydantic-2.14.2 pydantic_core-2.50.2 pyparsing-3.3.3 pytest-9.2.0 pytest-cov-7.1.0 requests-2.34.2 rich-15.0.0 ruff-0.17.3 sortedcontainers-2.4.0 starlette-1.10.0 stevedore-5.9.1 tomli-2.5.0 tomli_w-1.2.0 typing-inspection-0.4.4 typing_extensions-4.16.0 urllib3-2.8.0 uvicorn-0.54.0
-#8 67.98 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
-#8 DONE 74.0s
+#8 CACHED
 
 #9 [test 5/8] COPY opspilot ./opspilot
-#9 DONE 9.4s
+#9 DONE 0.7s
 
 #10 [test 6/8] COPY tests ./tests
-#10 DONE 1.1s
+#10 DONE 0.9s
 
 #11 [test 7/8] COPY scripts ./scripts
-#11 DONE 3.2s
+#11 DONE 0.1s
 
 #12 [test 8/8] COPY pyproject.toml ./
-#12 DONE 0.3s
+#12 DONE 0.4s
 
 #13 exporting to image
 #13 exporting layers
-#13 exporting layers 35.0s done
-#13 exporting manifest sha256:784230d6e6f52174c263e536955cd1061cf976a2261f271cbf76191cd6203f58 0.0s done
-#13 exporting config sha256:7ba45c244f76f6f5d14fa516450b627fa1fc78175f88519fa40b5586341d84b5 0.0s done
-#13 exporting attestation manifest sha256:7b931d55af741e9775b9593c18c8008a0bf72e11c83a07699b38ed35ed2b4be6
-#13 exporting attestation manifest sha256:7b931d55af741e9775b9593c18c8008a0bf72e11c83a07699b38ed35ed2b4be6 0.0s done
-#13 exporting manifest list sha256:02250c4e847044944cc7d949373761ffd3c75a03a3e41491c82478146767e2d7 done
-#13 naming to docker.io/library/opspilot:test done
+#13 exporting layers 0.2s done
+#13 exporting manifest sha256:ebab26d237cd41eafeb0030841e4ca7760bd405f25e50098a2c3f4c8c589c726 0.0s done
+#13 exporting config sha256:e6d7a12391ed7d132a33387aefb0c31ef0c6620f42793dcdf18af5cbf15d07aa 0.0s done
+#13 exporting attestation manifest sha256:dee880acd820d704a7e24092619f963c7469d85b86cd13b87cd6c86eab1643ee
+#13 exporting attestation manifest sha256:dee880acd820d704a7e24092619f963c7469d85b86cd13b87cd6c86eab1643ee 0.5s done
+#13 exporting manifest list sha256:def96ca42709abd12e38fd5a1090f38d18dd8ea2a8d03927ef22f13a748f1f05
+#13 exporting manifest list sha256:def96ca42709abd12e38fd5a1090f38d18dd8ea2a8d03927ef22f13a748f1f05 0.2s done
+#13 naming to docker.io/library/opspilot:test
+#13 naming to docker.io/library/opspilot:test 0.1s done
 #13 unpacking to docker.io/library/opspilot:test
-#13 unpacking to docker.io/library/opspilot:test 18.7s done
-#13 DONE 54.0s
+#13 unpacking to docker.io/library/opspilot:test 1.5s done
+#13 DONE 2.6s
 docker run --rm --cap-drop ALL --security-opt no-new-privileges --memory 512m --cpus 1 --pids-limit 128 opspilot:test
 ........................................................................ [ 63%]
-.........................................                                [100%]
+..........................................                               [100%]
 =============================== warnings summary ===============================
 ../usr/local/lib/python3.14/site-packages/fastapi/testclient.py:1
   /usr/local/lib/python3.14/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
     from starlette.testclient import TestClient as TestClient  # noqa
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-113 passed, 1 warning in 5.16s
+114 passed, 1 warning in 4.94s
 docker build --target runtime -t opspilot:local .
 #0 building with "desktop-linux" instance using docker driver
 
@@ -203,7 +76,7 @@ docker build --target runtime -t opspilot:local .
 #2 DONE 0.0s
 
 #3 [internal] load metadata for docker.io/library/node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c
-#3 DONE 1.1s
+#3 DONE 0.0s
 
 #4 [internal] load .dockerignore
 #4 transferring context: 190B done
@@ -227,67 +100,41 @@ docker build --target runtime -t opspilot:local .
 #9 [runtime 3/6] COPY requirements.lock ./
 #9 CACHED
 
-#10 [web 2/7] WORKDIR /build
+#10 [runtime 4/6] RUN python -m pip install --no-cache-dir --upgrade pip==26.2.2 && python -m pip install --no-cache-dir --require-hashes -r requirements.lock && groupadd -g 10001 opspilot && useradd -u 10001 -g 10001 -M opspilot && mkdir /state && chown 10001:10001 /state
 #10 CACHED
 
-#11 [web 3/7] COPY package.json package-lock.json ./
-#11 DONE 0.0s
+#11 [web 6/7] COPY web ./web
+#11 CACHED
 
-#12 [runtime 4/6] RUN python -m pip install --no-cache-dir --upgrade pip==26.2.2 && python -m pip install --no-cache-dir --require-hashes -r requirements.lock && groupadd -g 10001 opspilot && useradd -u 10001 -g 10001 -M opspilot && mkdir /state && chown 10001:10001 /state
+#12 [web 5/7] COPY tsconfig.json index.html ./
 #12 CACHED
 
-#13 [runtime 5/6] COPY opspilot ./opspilot
-#13 DONE 0.1s
+#13 [web 3/7] COPY package.json package-lock.json ./
+#13 CACHED
 
-#14 [web 4/7] RUN npm ci --ignore-scripts
-#14 5.387
-#14 5.387 added 27 packages, and audited 28 packages in 4s
-#14 5.387
-#14 5.387 9 packages are looking for funding
-#14 5.387   run `npm fund` for details
-#14 5.388
-#14 5.388 found 0 vulnerabilities
-#14 5.394 npm notice
-#14 5.394 npm notice New major version of npm available! 11.19.1 -> 12.2.1
-#14 5.394 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
-#14 5.394 npm notice To update run: npm install -g npm@12.2.1
-#14 5.394 npm notice
-#14 DONE 6.4s
+#14 [web 2/7] WORKDIR /build
+#14 CACHED
 
-#15 [web 5/7] COPY tsconfig.json index.html ./
-#15 DONE 0.3s
+#15 [web 4/7] RUN npm ci --ignore-scripts
+#15 CACHED
 
-#16 [web 6/7] COPY web ./web
-#16 DONE 0.1s
+#16 [web 7/7] RUN npm run build
+#16 CACHED
 
-#17 [web 7/7] RUN npm run build
-#17 1.193
-#17 1.193 > opspilot@0.1.1 build
-#17 1.193 > tsc --noEmit && vite build
-#17 1.193
-#17 2.572 vite v8.3.5 building client environment for production...
-#17 2.589 transforming...
-#17 2.643 ✓ 15 modules transformed.
-#17 2.674 rendering chunks...
-#17 2.709 computing gzip size...
-#17 2.712 dist/index.html                   0.46 kB │ gzip:  0.31 kB
-#17 2.712 dist/assets/index-Nk3NU4WT.css   11.20 kB │ gzip:  3.28 kB
-#17 2.712 dist/assets/index-BDUHps93.js   206.64 kB │ gzip: 64.46 kB
-#17 2.712
-#17 2.713 ✓ built in 140ms
-#17 DONE 2.8s
+#17 [runtime 5/6] COPY opspilot ./opspilot
+#17 DONE 0.1s
 
 #18 [runtime 6/6] COPY --from=web /build/dist ./dist
-#18 DONE 0.0s
+#18 DONE 0.1s
 
 #19 exporting to image
 #19 exporting layers 0.1s done
-#19 exporting manifest sha256:eb10625014c4424015d33ba92191c264cda0096e698b3a69e292f879a4243762 done
-#19 exporting config sha256:56518f097ec573bc9ffe9a907c964988f5256a6639783291701d57a3aca2272f done
-#19 exporting attestation manifest sha256:d9612bb9a4a5e50bab4b2515ec8ab662430763a516b28fab40f2f3b196c97f83 0.0s done
-#19 exporting manifest list sha256:1d3f4abe2bb5529caf90d0e9a8cbff1e7a456a494f7f309c8ad67208bf7f5a00 done
+#19 exporting manifest sha256:e699f14f5ed01bdb3f3277e46e8384ff3b9f6ac4d313e325037a452deac6cfe9 done
+#19 exporting config sha256:bc42b9f07bcc6baf9ea80fe7da2b98dc58799703579ad99084953a3386ac00bf 0.0s done
+#19 exporting attestation manifest sha256:e6ed1a18b494966af8815ecd66eed56ad68f6472474f43e466b29d34335c6f6b 0.0s done
+#19 exporting manifest list sha256:8cf894b3ec51f30231b87509f7fc1993047e0593f8a95e6a3fcf14443fe4a0c7 done
 #19 naming to docker.io/library/opspilot:local done
 #19 unpacking to docker.io/library/opspilot:local 0.0s done
-#19 DONE 0.1s
+#19 DONE 0.2s
 .venv/bin/python -m scripts.container_smoke
 {"scope": "packaged runtime; non-root, read-only root, no capabilities, bounded resources", "unauthenticated_denied": true, "unapproved_denied": true, "recovery_verified": true, "dashboard_served": true, "container_user": "10001:10001"}

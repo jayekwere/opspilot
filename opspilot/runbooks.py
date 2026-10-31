@@ -354,6 +354,15 @@ async def collect(request: Request, lab: Lab) -> Result:
         )
 
 
+def read_configuration(path: Path) -> str:
+    """Bound allocation before parsing even a misconfigured oversized host file."""
+    with path.open(encoding="utf-8") as stream:
+        text = stream.read(32769)
+    if len(text) > 32768:
+        raise ValueError("configuration exceeds collection limit")
+    return text
+
+
 async def live(book: str) -> dict[str, Any]:
     if book == "performance":
         mem = {}
@@ -417,7 +426,7 @@ async def live(book: str) -> dict[str, Any]:
         except ssl.SSLCertVerificationError:
             return {"trusted": False, "hostname_valid": False, "days_remaining": 0}
     if book == "security":
-        text = Path("/etc/ssh/sshd_config").read_text()[:32768]
+        text = read_configuration(Path("/etc/ssh/sshd_config"))
         config: dict[str, str] = {}
         unresolved = False
         for line in text.splitlines():

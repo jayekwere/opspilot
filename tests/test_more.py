@@ -73,7 +73,10 @@ def test_performance_linux_parser():
 
 def test_security_live_parser():
     with (
-        patch("pathlib.Path.read_text", return_value="PermitRootLogin no\nPasswordAuthentication no\n"),
+        patch(
+            "opspilot.runbooks.read_configuration",
+            return_value="PermitRootLogin no\nPasswordAuthentication no\n",
+        ),
         patch("pathlib.Path.stat", return_value=SimpleNamespace(st_mode=0o600)),
     ):
         result = asyncio.run(live("security"))
@@ -175,7 +178,7 @@ def test_ssh_policy_ambiguity_is_not_healthy():
 
     config = "PermitRootLogin no\nPasswordAuthentication no\nInclude /etc/ssh/sshd_config.d/*.conf\nMatch User root\n"
     with (
-        patch("pathlib.Path.read_text", return_value=config),
+        patch("opspilot.runbooks.read_configuration", return_value=config),
         patch("pathlib.Path.stat", return_value=SimpleNamespace(st_mode=0o600)),
     ):
         result = analyze("security", asyncio.run(live("security")))

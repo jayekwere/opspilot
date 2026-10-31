@@ -109,3 +109,14 @@ def test_credentials_do_not_reach_unrelated_collectors(monkeypatch):
         )
     )
     assert result.text == "None\nNone\n"
+
+
+def test_configuration_read_is_bounded(tmp_path):
+    from opspilot.runbooks import read_configuration
+
+    path = tmp_path / "sshd_config"
+    path.write_text("x" * 32769)
+    with pytest.raises(ValueError):
+        read_configuration(path)
+    path.write_text("PermitRootLogin no\n")
+    assert read_configuration(path) == "PermitRootLogin no\n"
