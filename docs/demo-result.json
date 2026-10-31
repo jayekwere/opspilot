@@ -1,0 +1,268 @@
+{
+  "scope": "controlled disposable HTTP service lab",
+  "diagnosis": {
+    "id": "5cdd1d71-0eec-4d10-a456-3eccebf362ca",
+    "actor": "lab-operator",
+    "request": {
+      "runbook": "service",
+      "target": "lab",
+      "scenario": "failure",
+      "manual_seconds": null,
+      "baseline_source": null
+    },
+    "status": "finding",
+    "started_at": 1793480729.121205,
+    "seconds": 0.08999020897317678,
+    "intervention_required": true,
+    "findings": [
+      {
+        "code": "service_unhealthy",
+        "severity": "critical",
+        "summary": "Service health check failed",
+        "recommendation": "Request independent approval for disposable lab recovery"
+      }
+    ],
+    "evidence": {
+      "http_status": 503,
+      "generation": 0
+    },
+    "manual_effort_avoided_seconds": null
+  },
+  "unapproved_execution_denied": true,
+  "recovery": {
+    "id": "5cdd1d71-0eec-4d10-a456-3eccebf362ca",
+    "actor": "lab-operator",
+    "request": {
+      "runbook": "service",
+      "target": "lab",
+      "scenario": "failure",
+      "manual_seconds": null,
+      "baseline_source": null
+    },
+    "status": "finding",
+    "started_at": 1793480729.121205,
+    "seconds": 0.08999020897317678,
+    "intervention_required": true,
+    "findings": [
+      {
+        "code": "service_unhealthy",
+        "severity": "critical",
+        "summary": "Service health check failed",
+        "recommendation": "Request independent approval for disposable lab recovery"
+      }
+    ],
+    "evidence": {
+      "http_status": 503,
+      "generation": 0
+    },
+    "manual_effort_avoided_seconds": null,
+    "remediation": {
+      "outcome": "succeeded",
+      "seconds": 0.00714854197576642,
+      "verified": true,
+      "failure_reason": null,
+      "action": "recover_disposable_service"
+    }
+  },
+  "idempotent_replay": true,
+  "healthy_verification": {
+    "id": "86773bd8-100f-48c6-86b1-189a846c74bd",
+    "actor": "lab-operator",
+    "request": {
+      "runbook": "service",
+      "target": "lab",
+      "scenario": "failure",
+      "manual_seconds": null,
+      "baseline_source": null
+    },
+    "status": "healthy",
+    "started_at": 1793480729.227511,
+    "seconds": 0.007440041052177548,
+    "intervention_required": false,
+    "findings": [],
+    "evidence": {
+      "http_status": 200,
+      "generation": 0
+    },
+    "manual_effort_avoided_seconds": null
+  },
+  "stale_approval_failure": {
+    "id": "76f0d9a0-6ce2-4873-9e55-84abe5909a4f",
+    "actor": "lab-operator",
+    "request": {
+      "runbook": "service",
+      "target": "lab",
+      "scenario": "failure",
+      "manual_seconds": null,
+      "baseline_source": null
+    },
+    "status": "finding",
+    "started_at": 1793480729.237351,
+    "seconds": 0.007160583045333624,
+    "intervention_required": true,
+    "findings": [
+      {
+        "code": "service_unhealthy",
+        "severity": "critical",
+        "summary": "Service health check failed",
+        "recommendation": "Request independent approval for disposable lab recovery"
+      }
+    ],
+    "evidence": {
+      "http_status": 503,
+      "generation": 1
+    },
+    "manual_effort_avoided_seconds": null,
+    "remediation": {
+      "outcome": "failed",
+      "seconds": 7.462501525878906e-05,
+      "verified": false,
+      "failure_reason": "stale_lab_generation",
+      "action": "recover_disposable_service"
+    }
+  },
+  "elapsed_seconds": 0.1275861249305308,
+  "audit": [
+    {
+      "seq": 14,
+      "at": 1793480729.248149,
+      "actor": "lab-operator",
+      "event": "remediation_failed",
+      "subject": "793b1226-3c92-4ef7-be51-588d085c8d45",
+      "previous": "c0a4573f86a17bb79bf6fdc19b2f9d58312884c493b6668a970f3686bf92b6ea",
+      "digest": "6cb646c9d3fa42a62ad21849621f1da7461d66c1273ceaf9018d51922749cb8a"
+    },
+    {
+      "seq": 13,
+      "at": 1793480729.247436,
+      "actor": "lab-operator",
+      "event": "remediation_started",
+      "subject": "793b1226-3c92-4ef7-be51-588d085c8d45",
+      "previous": "bcb2a0a248fa4865748c350edaab899545cb8993a16a2bf62ae8e65d3019c628",
+      "digest": "c0a4573f86a17bb79bf6fdc19b2f9d58312884c493b6668a970f3686bf92b6ea"
+    },
+    {
+      "seq": 12,
+      "at": 1793480729.246767,
+      "actor": "lab-approver",
+      "event": "approval_approved",
+      "subject": "793b1226-3c92-4ef7-be51-588d085c8d45",
+      "previous": "fb5c44da69f6f5dd1ae448df96b119673d9419798bb0c8b7bcfe8b0b33062953",
+      "digest": "bcb2a0a248fa4865748c350edaab899545cb8993a16a2bf62ae8e65d3019c628"
+    },
+    {
+      "seq": 11,
+      "at": 1793480729.246146,
+      "actor": "lab-operator",
+      "event": "approval_requested",
+      "subject": "793b1226-3c92-4ef7-be51-588d085c8d45",
+      "previous": "eb9cce9e8679195263ba6b2fd55d0eef9abb962925dee31d5d36f1ec43437f05",
+      "digest": "fb5c44da69f6f5dd1ae448df96b119673d9419798bb0c8b7bcfe8b0b33062953"
+    },
+    {
+      "seq": 10,
+      "at": 1793480729.245473,
+      "actor": "lab-operator",
+      "event": "diagnosis_finding",
+      "subject": "76f0d9a0-6ce2-4873-9e55-84abe5909a4f",
+      "previous": "48e9133af5b46b8cc8981cddd94f1b82c3947642e31e8acdf12fa029cf18cc3f",
+      "digest": "eb9cce9e8679195263ba6b2fd55d0eef9abb962925dee31d5d36f1ec43437f05"
+    },
+    {
+      "seq": 9,
+      "at": 1793480729.237709,
+      "actor": "lab-operator",
+      "event": "diagnosis_started",
+      "subject": "76f0d9a0-6ce2-4873-9e55-84abe5909a4f",
+      "previous": "51498f40dca9312b5bfa24c0995c59212f7f3e1a0f5f23529d407a7cbed7361b",
+      "digest": "48e9133af5b46b8cc8981cddd94f1b82c3947642e31e8acdf12fa029cf18cc3f"
+    },
+    {
+      "seq": 8,
+      "at": 1793480729.2360032,
+      "actor": "lab-operator",
+      "event": "diagnosis_healthy",
+      "subject": "86773bd8-100f-48c6-86b1-189a846c74bd",
+      "previous": "ed5b03bcb3dc1c3372957db5407d4ac2fb5bfa93bc5e28ffb20c405f929904c4",
+      "digest": "51498f40dca9312b5bfa24c0995c59212f7f3e1a0f5f23529d407a7cbed7361b"
+    },
+    {
+      "seq": 7,
+      "at": 1793480729.2277372,
+      "actor": "lab-operator",
+      "event": "diagnosis_started",
+      "subject": "86773bd8-100f-48c6-86b1-189a846c74bd",
+      "previous": "6cfa14f153016d4889ebf321b460362bd12ac80270bb79ce227c9d75b6659a87",
+      "digest": "ed5b03bcb3dc1c3372957db5407d4ac2fb5bfa93bc5e28ffb20c405f929904c4"
+    },
+    {
+      "seq": 6,
+      "at": 1793480729.226953,
+      "actor": "lab-operator",
+      "event": "remediation_succeeded",
+      "subject": "4c14cb86-84ed-4c7c-8cf0-5345ba32ffd1",
+      "previous": "d265b8a9c9fb09a71ffbe6b17701113ae4575c10a8a6748d7942bb670db8e92d",
+      "digest": "6cfa14f153016d4889ebf321b460362bd12ac80270bb79ce227c9d75b6659a87"
+    },
+    {
+      "seq": 5,
+      "at": 1793480729.2187068,
+      "actor": "lab-operator",
+      "event": "remediation_started",
+      "subject": "4c14cb86-84ed-4c7c-8cf0-5345ba32ffd1",
+      "previous": "3dac241c67b0533bc26d097abbaa539f19c54c5c68fb56b27b96d6b2fb9e065b",
+      "digest": "d265b8a9c9fb09a71ffbe6b17701113ae4575c10a8a6748d7942bb670db8e92d"
+    },
+    {
+      "seq": 4,
+      "at": 1793480729.2157068,
+      "actor": "lab-approver",
+      "event": "approval_approved",
+      "subject": "4c14cb86-84ed-4c7c-8cf0-5345ba32ffd1",
+      "previous": "d7c7c43c7e9170c151ec3d2acd3e21df7609a79e658757f837c8ae81305c7352",
+      "digest": "3dac241c67b0533bc26d097abbaa539f19c54c5c68fb56b27b96d6b2fb9e065b"
+    },
+    {
+      "seq": 3,
+      "at": 1793480729.215047,
+      "actor": "lab-operator",
+      "event": "approval_requested",
+      "subject": "4c14cb86-84ed-4c7c-8cf0-5345ba32ffd1",
+      "previous": "29180e3c065218a8767e6d1e1cb101df4d29ae2c79cc5bd68165063f6df370e2",
+      "digest": "d7c7c43c7e9170c151ec3d2acd3e21df7609a79e658757f837c8ae81305c7352"
+    },
+    {
+      "seq": 2,
+      "at": 1793480729.214106,
+      "actor": "lab-operator",
+      "event": "diagnosis_finding",
+      "subject": "5cdd1d71-0eec-4d10-a456-3eccebf362ca",
+      "previous": "84388b0da49b28f95cfbe09df344c23f0917c54680b8760ac0fe4246dabe4d91",
+      "digest": "29180e3c065218a8767e6d1e1cb101df4d29ae2c79cc5bd68165063f6df370e2"
+    },
+    {
+      "seq": 1,
+      "at": 1793480729.122046,
+      "actor": "lab-operator",
+      "event": "diagnosis_started",
+      "subject": "5cdd1d71-0eec-4d10-a456-3eccebf362ca",
+      "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+      "digest": "84388b0da49b28f95cfbe09df344c23f0917c54680b8760ac0fe4246dabe4d91"
+    }
+  ],
+  "metrics": {
+    "total_runs": 3,
+    "completed_runs": 3,
+    "success_rate": 1.0,
+    "failure_rate": 0.0,
+    "intervention_runs": 2,
+    "automated_seconds": 0.10459083307068795,
+    "manual_seconds": 0,
+    "estimated_effort_avoided_seconds": 0,
+    "baseline_runs": 0,
+    "baseline_automated_seconds": 0,
+    "repeat_groups": 1,
+    "repeatability": 0.0,
+    "scope": "latest 200 runs; baseline values supplied by operator; repeatability means identical outcome status"
+  }
+}

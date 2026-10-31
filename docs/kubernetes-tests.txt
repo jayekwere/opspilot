@@ -1,0 +1,3 @@
+Waiting for deployment "healthy" rollout to finish: 0 of 1 updated replicas are available...
+deployment "healthy" successfully rolled out
+Kubernetes failed pod and deployment detected; node conditions collected

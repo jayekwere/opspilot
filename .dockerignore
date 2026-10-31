@@ -1,0 +1,14 @@
+.venv
+node_modules
+.git
+.opspilot
+__pycache__
+.pytest_cache
+.mypy_cache
+.ruff_cache
+test-results
+playwright-report
+coverage.xml
+.coverage
+docs
+dist

@@ -1,0 +1,6 @@
+"""Compatibility import for the public diagnostic registry."""
+
+from opspilot.cli import main
+
+if __name__ == "__main__":
+    main()

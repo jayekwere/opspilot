@@ -1,0 +1,73 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "runbook": {
+      "enum": [
+        "performance",
+        "filesystem",
+        "service",
+        "network",
+        "tls",
+        "kubernetes",
+        "pipeline",
+        "logs",
+        "cloud",
+        "security"
+      ],
+      "title": "Runbook",
+      "type": "string"
+    },
+    "target": {
+      "default": "fixture",
+      "enum": [
+        "local",
+        "lab",
+        "fixture"
+      ],
+      "title": "Target",
+      "type": "string"
+    },
+    "scenario": {
+      "default": "failure",
+      "enum": [
+        "healthy",
+        "failure",
+        "unavailable"
+      ],
+      "title": "Scenario",
+      "type": "string"
+    },
+    "manual_seconds": {
+      "anyOf": [
+        {
+          "maximum": 86400,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Manual Seconds"
+    },
+    "baseline_source": {
+      "anyOf": [
+        {
+          "maxLength": 120,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Baseline Source"
+    }
+  },
+  "required": [
+    "runbook"
+  ],
+  "title": "Request",
+  "type": "object"
+}

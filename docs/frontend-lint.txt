@@ -1,0 +1,5 @@
+
+> opspilot@0.1.0 format
+> biome check --write .
+
+Checked 7 files in 130ms. Fixed 1 file.

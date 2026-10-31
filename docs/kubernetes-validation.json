@@ -1,0 +1,167 @@
+{
+  "scope": "disposable kind cluster; failed workload diagnosed, no cluster remediation",
+  "failure": {
+    "status": "finding",
+    "findings": [
+      {
+        "code": "pod_not_ready",
+        "severity": "warning",
+        "summary": "Pod container is not ready: NotReady",
+        "recommendation": "Inspect events, previous logs, probes, and resource limits"
+      },
+      {
+        "code": "deployment_unavailable",
+        "severity": "warning",
+        "summary": "Available replicas below desired count",
+        "recommendation": "Inspect rollout conditions and failing pods"
+      }
+    ],
+    "evidence": {
+      "items": [
+        {
+          "kind": "Pod",
+          "metadata": {
+            "name": "broken-75cd468467-h8pnh",
+            "namespace": "opspilot-validation"
+          },
+          "spec": {
+            "replicas": 1
+          },
+          "status": {
+            "phase": "Running",
+            "containerStatuses": [
+              {
+                "ready": false,
+                "restartCount": 1,
+                "state": {
+                  "waiting": {
+                    "reason": "NotReady"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "kind": "Node",
+          "metadata": {
+            "name": "opspilot-validation-control-plane",
+            "namespace": null
+          },
+          "spec": {
+            "replicas": 1
+          },
+          "status": {
+            "conditions": [
+              {
+                "type": "MemoryPressure",
+                "status": "False"
+              },
+              {
+                "type": "DiskPressure",
+                "status": "False"
+              },
+              {
+                "type": "PIDPressure",
+                "status": "False"
+              },
+              {
+                "type": "Ready",
+                "status": "True"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "Deployment",
+          "metadata": {
+            "name": "broken",
+            "namespace": "opspilot-validation"
+          },
+          "spec": {
+            "replicas": 1
+          },
+          "status": {
+            "availableReplicas": 0
+          }
+        }
+      ]
+    }
+  },
+  "healthy": {
+    "status": "healthy",
+    "findings": [],
+    "evidence": {
+      "items": [
+        {
+          "kind": "Pod",
+          "metadata": {
+            "name": "healthy-76cdb99c96-tx9gm",
+            "namespace": "opspilot-validation"
+          },
+          "spec": {
+            "replicas": 1
+          },
+          "status": {
+            "phase": "Running",
+            "containerStatuses": [
+              {
+                "ready": true,
+                "restartCount": 0,
+                "state": {
+                  "waiting": {
+                    "reason": "NotReady"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "kind": "Node",
+          "metadata": {
+            "name": "opspilot-validation-control-plane",
+            "namespace": null
+          },
+          "spec": {
+            "replicas": 1
+          },
+          "status": {
+            "conditions": [
+              {
+                "type": "MemoryPressure",
+                "status": "False"
+              },
+              {
+                "type": "DiskPressure",
+                "status": "False"
+              },
+              {
+                "type": "PIDPressure",
+                "status": "False"
+              },
+              {
+                "type": "Ready",
+                "status": "True"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "Deployment",
+          "metadata": {
+            "name": "healthy",
+            "namespace": "opspilot-validation"
+          },
+          "spec": {
+            "replicas": 1
+          },
+          "status": {
+            "availableReplicas": 1
+          }
+        }
+      ]
+    }
+  },
+  "nodes_collected": 1
+}
