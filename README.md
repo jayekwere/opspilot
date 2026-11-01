@@ -100,3 +100,7 @@ Manual baselines can be supplied through the API or console with their source. E
 OpsPilot complements Linux Support Kit's host troubleshooting guidance and the GitLab CI diagnostic project's specialized pipeline investigation. Its focus is cross-domain orchestration, persisted evidence, independent change approval, recovery verification, and defensible toil accounting. It does not repackage those projects.
 
 MIT licensed. Built for reproducible operational engineering, with limitations stated alongside evidence.
+
+---
+
+**AI assistance:** AI tools helped with code or documentation.
